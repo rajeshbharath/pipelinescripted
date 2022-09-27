@@ -1,13 +1,9 @@
-node('master') {
- stage('Source') {
-  git 'https://github.com/BINPIPE/scripted-and-declarative-pipeline-demo.git'
- }
- stage('Build') {
-  sh 'docker build -t flask-app:latest .'
- }
-
- stage('Test') {
-  sh 'python3 test.py'
- }
-
+node {
+    stage('test') {
+        sh 'echo hello'
+    }
+    stage('learning') {
+        git url: 'https://github.com/GitPracticeRepo/game-of-life.git',
+            branch: 'master'
+    }
 }
